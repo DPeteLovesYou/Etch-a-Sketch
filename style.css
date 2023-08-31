@@ -11,11 +11,17 @@ body {
 .gridContainer {
   width: 750px;
   height: 750px;
-  border-width: 5px;
+  border-width: 2px;
   border-style: ridge;
   border-color: black;
   border-radius: 6px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.pixel {
+  border-width: 1px;
+  border-color: darkgray;
+  border-style: solid;
 }
