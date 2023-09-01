@@ -5,12 +5,20 @@ const containerWidth = containerInfo.width - 4; //border is 2px per side
 let rowNumber = 16;
 let boxSize = (containerWidth/rowNumber) - 2; //each has a border of 1px
 let boxNumber = rowNumber * rowNumber;
-
-for (i = 0; i < boxNumber; i++) {
-  createPixel();
-}
-
 let pixels = document.querySelectorAll('.pixel');
+
+createGrid();
+
+function createGrid() {
+  boxSize = (containerWidth/rowNumber) - 2;
+  boxNumber = rowNumber * rowNumber;
+
+  for (i = 0; i < boxNumber; i++) {
+    createPixel();
+  }
+
+  pixels = document.querySelectorAll('.pixel');
+}
 
 function createPixel() {
   let pixel = document.createElement('div');
@@ -26,11 +34,11 @@ function hoverEvent(e) {
 }
 
 function newGrid() {
-  let newSizeString = prompt("To set the new grid size, please enter a number between 16 and 100");
+  let newSizeString = prompt("To set the new grid size, please enter a number between 5 and 100");
   let newSize = Number(newSizeString); 
   rowNumber = newSize;
   removePixel();
-  createPixel();
+  createGrid();
 }
 
 function removePixel() {
@@ -46,4 +54,4 @@ clear.addEventListener('click', () => {
 })
 
 const changeSize = document.querySelector('.changeSize');
-changeSize.addEventListener('click', removePixel);
+changeSize.addEventListener('click', newGrid);
