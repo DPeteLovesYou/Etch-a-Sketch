@@ -25,8 +25,16 @@ function hoverEvent(e) {
   e.currentTarget.classList.add('active')
 }
 
+function newGrid() {
+  let newSizeString = prompt("To set the new grid size, please enter a number between 16 and 100");
+  let newSize = Number(newSizeString); 
+  rowNumber = newSize;
+  removePixel();
+  createPixel();
+}
+
 function removePixel() {
-  while (container.firstChild) {
+  while (container.lastElementChild) {
     container.removeChild(container.lastElementChild)
   }
 }
