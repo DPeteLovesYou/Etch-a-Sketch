@@ -1,9 +1,9 @@
 const container = document.querySelector('.gridContainer')
 const containerInfo = container.getBoundingClientRect();
-const containerWidth = containerInfo.width - 4;
+const containerWidth = containerInfo.width - 4; //border is 2px per side
 
 let rowNumber = 16;
-let boxSize = (containerWidth/rowNumber) - 2;
+let boxSize = (containerWidth/rowNumber) - 2; //each has a border of 1px
 let boxNumber = rowNumber * rowNumber;
 
 function createPixel() {
@@ -15,8 +15,8 @@ function createPixel() {
   container.appendChild(pixel);
 }
 
-function hoverEvent() {
-  console.log('test');
+function hoverEvent(e) {
+  e.currentTarget.classList.add('active')
 }
 
 //I thought it would be best to create each pixel div individually rather than trying to group them by row or something
