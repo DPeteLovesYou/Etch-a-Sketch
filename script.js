@@ -25,8 +25,17 @@ function hoverEvent(e) {
   e.currentTarget.classList.add('active')
 }
 
+function removePixel() {
+  while (container.firstChild) {
+    container.removeChild(container.lastElementChild)
+  }
+}
+
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
  for (const pixel of pixels)
   pixel.classList.remove('active');
 })
+
+const changeSize = document.querySelector('.changeSize');
+changeSize.addEventListener('click', removePixel);
