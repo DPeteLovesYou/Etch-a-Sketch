@@ -1,7 +1,7 @@
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,16 +43,12 @@ button:hover {
   flex-wrap: wrap;
   background-color: white;
   margin: 100px;
-  flex-grow: 0;
-  flex-shrink: 0;
 }
 
 .pixel {
   border-width: 1px;
   border-color: darkgray;
   border-style: solid;
-  flex-grow: 0;
-  flex-shrink: 0;
 }
 
 .active {
