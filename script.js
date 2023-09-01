@@ -6,6 +6,12 @@ let rowNumber = 16;
 let boxSize = (containerWidth/rowNumber) - 2; //each has a border of 1px
 let boxNumber = rowNumber * rowNumber;
 
+for (i = 0; i < boxNumber; i++) {
+  createPixel();
+}
+
+let pixels = document.querySelectorAll('.pixel');
+
 function createPixel() {
   let pixel = document.createElement('div');
   pixel.classList.add('pixel');
@@ -19,7 +25,8 @@ function hoverEvent(e) {
   e.currentTarget.classList.add('active')
 }
 
-//I thought it would be best to create each pixel div individually rather than trying to group them by row or something
-for (i = 0; i < boxNumber; i++) {
-  createPixel();
-}
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+ for (const pixel of pixels)
+  pixel.classList.remove('active');
+})
