@@ -36,9 +36,14 @@ function hoverEvent(e) {
 function newGrid() {
   let newSizeString = prompt("To set the new grid size, please enter a number between 5 and 100");
   let newSize = Number(newSizeString); 
-  rowNumber = newSize;
-  removePixel();
-  createGrid();
+
+  if (newSize >= 5 && newSize <= 100) {
+    rowNumber = newSize;
+    removePixel();
+    createGrid();
+  } else {
+    alert("Between 5 and 10 please!! Nice try!!!")
+  }
 }
 
 function removePixel() {
